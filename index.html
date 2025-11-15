@@ -2,18 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blue Square</title>
+    <title>Clickable Color-Changing Square</title>
     <style>
-        .blue-square {
+        .square {
             width: 150px;
             height: 150px;
             background-color: blue;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
     </style>
 </head>
 <body>
 
-<div class="blue-square"></div>
+<div class="square" onclick="changeColor()"></div>
+
+<script>
+    function changeColor() {
+        const square = document.querySelector('.square');
+        // Change to a random color
+        square.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    }
+</script>
 
 </body>
 </html>
